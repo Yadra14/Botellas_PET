@@ -1,0 +1,171 @@
+---
+title: APLICACIÓN DE MODELOS DE ÁRBOLES DE CLASIFICACIÓN PARA LA IDENTIFICACIÓN DE PAÍSES CON MAYOR IMPACTO EN LA CONTAMINACIÓN DE BOTELLAS PET CON ÁNALISIS DE RESIDUOS
+author:
+  - name: Bautista Mireya
+    affil: 
+  - name: Flores Yadranka
+    affil: 
+  - name: Pinto Silvana
+    affil:
+  - name: Quispe Alejandra
+    affil:
+affiliation:
+  - num: 1
+    address: |
+      Universidad Catolica Boliviana San Pablo - 
+      Dipomado de Logistica Integral
+      La Paz, Bolivia
+abstract: |
+  
+keywords: |
+  Plástico, PET, recolección, base de datos, árboles de decisión.
+
+---
+
+
+# Introducción
+
+El presente trabajo de investigación se enfocará en el análisis de datos sobre la contaminación de las botellas PET en el medio ambiente que causa la producción y el consumo excesivo a nivel mundial. Lo cual conlleva a una gran problemática en el reciclaje de estos residuos.
+Nos enfocaremos en la regla de la  3R (reducir, reciclar , reutilizar ) dado que, mientras exista mejor manejo de los residuos, mejor será el aprovechamiento de la materia primas no renovables.
+El uso de botellas PET (politereftalato de etileno)  empezó en la década pasada de manera global para el que contaba con una propiedad primordial como barrera de gases , en bebidas gaseosas y de agua, y por contar con diversas particularidades como su escaso peso e higiene al no transferir sabores a alimentos o bebidas y seguridad a eventuales rupturas por ser biorientado.
+
+## Objetivos
+
+Objetivo del estudio
+Recopilación de datos sobre recolección de botellas PET.
+Realizar un análisis exploratorio que describa el contexto actual de la problemática.
+Identificar qué modelo se ajusta al dataset que se tiene.
+Diseñar un modelo de predicción de datos mediante conceptos de árboles de decisión 
+
+## Estado del arte
+
+Contaminación de plástico
+Se producen millones de  toneladas al día de plástico en todo el mundo, sobre  todo botellas PET. Provocando así una contaminación ambiental que visual de estos residuos, y/o bien en la obstrucción del desazolve de agua en temporadas de lluvia.
+La principal causa de este problema es que la basura plástica no es biodegradable. A esto nos referimos a qué no existen organismos que convierten  a estos residuos en materia orgánica, haciendo que el plástico se fragmente, degrade, y desintegre, y por lo tanto permanece en el ambiente a medida que se va haciendo cada vez más pequeño. La acción de la temperatura, de los rayos ultravioletas, del viento, etc., lo van rompiendo mecánicamente hasta transformarlo en micro y nano partículas plásticas.
+En segundo lugar, el plástico no es inerte. En su  manufactura incorpora aditivos, compuestos químicos que lo hacen más flexible, duradero y transparente. 
+Los más conocidos son el bisfenol A (BPA) y los ftalatos , aunque hay muchos diferentes tipos, e incluyen metales pesados como el plomo. Estos  aditivos no están incorporados a la matriz del plástico, con lo cual pueden liberarse al ambiente y, a medida que éste se fragmenta y se degrada, más aditivos se liberan, sobre todo a altas temperaturas.
+El impacto que genera la basura plástica en la contaminación en el medio ambiente generalmente se divide en dos categorías,los macro y micro plásticos. Los microplásticos tienen una longitud mayor a 5mm y constituyen fragmentos grandes de desechos plásticos, como restos de bolsas, redes de pesca, botellas, tapitas de botellas, etc. El microplástico tiene, por definición, menos de 5mm de longitud, aunque puede estar en el orden de los micrómetros (milésima parte de un milímetros)  y nanómetros (millonésima parte de un milímetro), y se forma a medida que los grandes fragmentos se desintegran por la acción mecánica de los vientos, el agua, los rayos UV, etc.
+
+
+Reciclaje 
+Reciclar es un proceso mediante el cual productos de desecho son nuevamente utilizados, también podemos decir que es un “proceso donde materiales de desperdicio son recolectados y transformados en nuevos materiales que pueden ser utilizados o vendidos como nuevos productos o materias primas”
+Plástico
+El plástico es uno de los residuos que más pueden dañar el medio ambiente si no se recicla debidamente, ya que cuando es liberado en la naturaleza puede tardar más de 200 años en degradarse. Por ellos, es necesario reciclar para contribuir a preservar nuestro planeta.
+Proceso de Reciclaje del Plástico
+El proceso de reciclaje del plástico consiste en recolectar el material, seleccionarlo y clasificarlo. Por último, se limpia y se trocea para que finalmente se procese para su fundición. Después de este proceso, el material reciclado obtenido se utiliza como base en la fabricación de nuevos objetos.
+
+Clasificación de reciclaje de botellas 
+Podemos encontrar 7 tipos de plástico que se identifican por la composición de su estructura. A partir de ello, se establecieron dos grupos principales de plásticos: los naturales y los sintéticos, que a su vez se subdividen en termoplásticos, termoestables y elastómeros. Cada uno de ellos se puede clasificar, pero la complejidad de procesarlos es diferente, Lo que determina su reciclabilidad es su codigo de Identificacion encontrado en el “triángulo de Moebius”, figura que encapsula un número del 1 al 7 y dependiendo de esta escala es el nivel de trabajo para reciclarlo. Los diferentes tipos de plásticos y en qué productos podemos encontrar son:
+PET (Polyenthylene Terephthalate o polietileno tereftalato): Encontrado en botellas de agua o refresco, empaques de alimentos y algunos contenedores de medicamentos.
+HDPE (High Density Polyethylene o polietileno de alta densidad): usado en envases de champú o en botellas de detergentes, suavizantes, entre otros.
+PVC (Polyvinyl chloride o policloruro de vinilo): empleado en tarjetas de crédito, tuberías, cañerías, revestimientos de cables, entre otros.
+LDPE (Low density Polyethylene o polietileno de baja densidad): usado en bolsas de plástico, film adhesivo, entre otros.
+PP (Polypropylene o polipropileno): se encuentra en tapas de agua o refresco, tapones, tuppers, popotes, piezas de automóviles y jeringas, entre otros.
+PS (Polystyrene o poliestireno): cubiertos, charolas, vasos para bebidas calientes, entre otros.
+Otros: piezas industriales, colchones, garrafones o electrodomésticos.
+
+Esta clasificación es importante ya que impulsa la creación de nuevas tecnologías y estrategias, con el objetivo de reutilizar la mayor parte de los plásticos (entre otros materiales).
+Cada tipo de plástico que existe debe cumplir con algunas especificaciones para hacer que su proceso de reciclaje sea mucho más fácil eficiente:
+
+PET: Asegurate de lavar bien los envases y aplastarlos para llevarlos a un centro de acopio
+HDPE: Es importante que los envases estén limpios, secos y sin grasa para poder reciclarlos. En este tipo de material, existen envases químicos que están marcados con un rombo de cuatro colores, a los cuales se les debe dar un tratamiento especial.
+PVC: Estos residuos se llevan a centros especiales para analizarlos y que se puedan reutilizar.
+LDPE: Se recicla de manera similar a cualquier otro plástico, pero en lugar  de que los residuos se muelan, se utiliza la técnica del guillotinado.
+PP: Se utiliza un reciclaje mecánico, pero bajo el método de extrusión e inyección que consiste en fundir y moldear los materiales a un flujo y fuerza constantes.
+PS: Debido a que este material lo encontramos en artículos para comida, es necesario dejar el residuo lo más limpio posible y sin restos orgánicos para su reciclaje.
+Otros: En esta categoría se procesan los residuos dependiendo de las características específicas del empaque: sin embargo, todos aquellos que tengan el número 7 en el triángulo de Moebius, son pocos los lugares que reciben estos residuos para reciclarse
+
+Plantas recicladoras 
+
+Las plantas recicladoras de plástico son instalaciones industriales especializadas en el procesamiento y reciclaje de residuos plásticos. Estas plantas tienen como objetivo principal recuperar y transformar los desechos plásticos en nuevos productos o materias primas, así como el impacto ambiental de estos materiales.
+El proceso de reciclaje de plástico en una planta reciclada generalmente involucra varias etapas, que pueden variar dependiendo de la tecnología utilizada y el tipo de plástico que se está reciclando. A continuación se describen los pasos generales del proceso:
+
+Recolección y clasificación: Los residuos plásticos se recolectan de diversas fuentes, como hogares, empresas o centros de acopio. Luego, se clasifican según su tipo de plástico (por ejemplo, PET, HDPE, PVC, etc.) y se separan de otros materiales no deseados, como papel, cartón o metales.
+
+Trituración y lavado: Los plásticos clasificados se trituran en pequeños fragmentos y luego se lavan para eliminar cualquier contaminante, como etiquetas, residuos de alimentos o suciedad.
+
+Procesamiento y extrusión: Los fragmentos de plástico limpios se someten a un proceso de fusión y extrusión. En este paso, el plástico se derrite y se moldea en forma de gránulos o pellets.
+
+Fabricación de productos: Los gránulos de plástico reciclado se pueden utilizar como materia prima para fabricar una amplia gama de productos, como envases, botellas, tiro, bolsas, productos textiles, entre otros. Estos gránulos pueden ser mezclados con plástico virgen o aditivos según las necesidades del producto final.
+
+Árboles de decisión 
+IBM define a los árboles de decisión como un algoritmo de aprendizaje supervisado no paramétrico, es decir, . Es un modelo de minería de datos con una estructura jerárquica, el cual se inicia en un nodo raíz, continúa hacia nodos internos y nodos hoja a través de ramas que constituyen el árbol de decisión en sí. 
+
+Figura. Estructura de un árbol de decisión
+![Fuente: IBM](D:\Diplomado\Módulo 6\TP1\TRABAJO_FINAL_BOTELLAS_PET\image.png){width=90%}
+
+Diseño de modelo
+En el campo del aprendizaje automático, hay distintas maneras de obtener árboles de decisión, la que usaremos en esta ocasión es conocida como CART: Classification And Regression Trees. Esta es una técnica de aprendizaje supervisado. Tenemos una variable objetivo (dependiente) y nuestra meta es obtener una función que nos permita predecir, a partir de variables predictoras (independientes), el valor de la variable objetivo para casos desconocidos.
+
+Como el nombre indica, CART es una técnica con la que se pueden obtener árboles de clasificación y de regresión. Usamos clasificación cuando nuestra variable objetivo es discreta, mientras que usamos regresión cuando es continua. Nosotros tendremos una variable discreta, así que haremos clasificación.
+
+La implementación particular de CART que usaremos es conocida como Recursive Partitioning and Regression Trees o RPART. De allí el nombre del paquete que utilizaremos en nuestro ejemplo.
+
+De manera general, lo que hace este algoritmo es encontrar la variable independiente que mejor separa nuestros datos en grupos, que corresponden con las categorías de la variable objetivo. Esta mejor separación es expresada con una regla. A cada regla corresponde un nodo.
+Aplicabilidad 
+La interpretabilidad del modelo permite identificar un conjunto de reglas a partir de las cuales se pueden tomar decisiones. Este es un algoritmo que no es demandante en poder de cómputo comparado con procedimientos más sofisticados y, a pesar de ello, que tiende a dar buenos resultados de predicción para muchos tipos de datos. Sin embargo, 
+cuenta con jn tipo de clasificación “débil”, pues sus resultados pueden variar mucho dependiendo de la muestra de datos usados para entrenar un modelo. Además es fácil sobre ajustar los modelos, esto es, hacerlos excelentes para clasificar datos que conocemos, pero deficientes para datos conocidos.
+
+
+## Justificación
+
+La recolección de botellas contribuye a reducir el impacto ambiental causado por los residuos plásticos. Las botellas de plástico, especialmente las que no se desechan adecuadamente, pueden terminar en los océanos y cuerpos de agua, causar contaminación y poner en peligro la vida marina. La recolección de botellas a nivel mundial busca evitar que estos desechos lleguen al medio ambiente, alentando su reciclaje y evitando su disposición inapropiada.
+
+Además, permite la conservación de recursos naturales. La producción de botellas de plástico requiere el consumo de recursos no renovables, como petróleo y gas natural. Al recolectar y reciclar botellas, se reduce la demanda de estos recursos y se contribuye a su conservación.
+
+La recolección de botellas también tiene un impacto positivo en la economía circular. Al reciclar botellas de plástico, se obtienen materiales reciclados que pueden ser utilizados para fabricar nuevos productos. Esto reduce la dependencia de la producción de plástico virgen, minimiza la extracción de recursos naturales y disminuye la cantidad de desechos que terminan en vertederos.
+
+
+#Materiales y métodos
+
+## Materiales
+
+La base de datos que se analizó para este estudio utiliza el código de barras del producto como principal identificador, para conocer distintas características como el nombre, la marca, la capacidad del envase y la ubicación donde se recolectó. La  misma, fue editada por los autores para seguir con el enfoque de la investigación propuesta.
+Se utilizó R Studio cómo principal herramienta para el análisis de los datos (incluyendo la etapa descriptiva y el modelo de redes neuronales aplicado más adelante).
+
+
+## Métodos
+
+El método para la obtención de datos fue la aplicación de Wastebase que se encuentran en Android o iPhone, con esto los socios lo verifican y vinculan con información útil, como ser: marca y producto.
+Respecto a la analitica de los datos:
+Primero, se realizó un análisis exploratorio de los datos. En este sentido, se calcularon las variables descriptivas de la base de datos de acuerdo con las diferentes categorías diferenciadas.
+A continuación, se procedió al modelado de entrenamiento de árboles de decisión para armar un pronóstico del dataset utilizado para ver el comportamiento de la recolección de botellas por país y marca.
+
+# Caso de estudio
+
+Para realizar este estudio se analizó una base de datos recopilada en diferentes continentes del mundo, como ser: África, Europa y Norteamérica. Este dataset fue construido a partir de la preocupación que generan los plásticos de un solo uso, lo cual ha aumentado durante los últimos años desde que el vidrio pasó a segundo plano como material para envases. Los datos comprenden un horizonte de tiempo de dos años aproximadamente (Marzo 2021 - Febrero 2023), utilizando la plataforma digital Wastebase, que cuenta con aplicaciones tanto para Android como iPhone.
+
+# Interpretación de resultados y conclusiones
+
+## Analisis exploratorio
+
+Se obtuvo una media de 103.51 de botellas recolectadas a nivel mundial de los paises que participaron en el registro de datos.
+
+El pais que tuvo mayor recolección de botellas fue Mozambique con un total de 748740 botellas , que se realizó en un periodo de 2 años.
+
+La media de botellas recolectadas en el año 2022 es 99.33 botellas a nivel mundial. En cambio, la media de las botellas recolectada en el año 2023 es 105.78 botellas.
+
+Tambien, se obtuvo la media de los 3 paises que tienen mayor media en la recoleccion de datos:
+
+- Primer lugar Mozambique con una media de 298 botellas recolectadas
+- Segundo lugar,Tanzania con una media de 105 botellas recolectadas
+- Tercer lugar, Malawi con una media de 78 botellas recolectadas
+
+
+
+## Árbol de decisiones
+
+De acuerdo, al arbol de decisiones se tomo las muestras del codigo de pais 1005 y 1007, es decir, de Kenya y Mozambique en la cual creó la matriz de confusion para poder decidir cuantos falsos negativos encontro en la muestra que se obtuvo. El nivel de confianza es de un 99.992 % en el arbol de decisiones por este motivo se encuentra en la grafica mostrada de caja de bigotes que el codigo 1006 y 1007 que corresponden a los paises de Malawi y Mozambique son las que tienen mayor cantidad de botellas recolectadas en dos de acuerdo a su dataset.
+
+## Conclusiones
+
+Al realizar la recopilación de datos pudimos ver que existe un problema creciente en el consumo y uso de las botellas PET, lo cual esta afectando enormemente a nuestro medio ambiente,  ya que las medidas por tratar de reciclar estas botellas si bien tienen un trabajo significativo y muy importante en nuestro entorno , aun no es suficiente para contra restar los efectos del mismo. Considerando que los datos recabados de Paises que se encuentran en el continente de Europa , África, medio oriente , y norte américa,  son un ejemplo de las acciones que sud américa debería empezar a tomar.
+
+Podemos concluir que con un análisis explorativo a los registros que tuvimos acceso se pudo ver a más detalle el comportamiento de botellas PET recolectadas a nivel mundial en 2 gestiones 2021-2022 y gracias a la ayuda de este análisis de gráficos y funciones estadísticas se obtuvieron datos y estos nos ayudaron a visualizar donde se encontraba la mayor cantidad de botellas PET recolectadas siendo esta Mozambique y viendo que cada gestión va aumentando la cantidad de uso de botellas PET dentro de la sociedad y por ende existe grandes cantidades de botellas PET para ser recolectadas.
+
+Sin embargo, con los resultados del arbol de decisiones resalta que se puede utilizar con más del 99% de confianza para poder utilizar el arbol que se encuentra entrenado y obtener las mejores decisiones. por lo tanto, con este tipo de entrenamiento tambien se observa que los paises que se encuentran recolectando botelllas son del codigo 1004 al 1008 y esto corresponde a United Kingdom, Kenya, Malawi, Mozambique. Tambien, se observa en el segundo grafico que hay otros paises que se encuntran recolectando botellas que son:Kenya, Malawi, Mozambique y Rwanda, solo se implementaria Rwanda.
+
+
+
+
+

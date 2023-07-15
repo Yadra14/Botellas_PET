@@ -1,0 +1,96 @@
+---
+title: "Arboles de decisión"
+author: "Alejandra Quispe"
+date: "2023-07-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## ANÁLISIS DE RECOLECCIÓN DE BOTELLAS PET A NIVEL MUNDIAL
+
+Se localizo el documento y se obtuvo la siguiente base de datos:
+```{r}
+getwd()
+```
+
+## IMPORTACIÓN DE LA BASE DE DATOS
+
+```{r}
+library(readxl)
+
+BD_Botellas<-read_excel("D:\\Diplomado\\Módulo 6\\TP1\\TRABAJO_FINAL_BOTELLAS_PET\\DATABASE_wastebase_scan_sum.xlsx")
+```
+
+## ANALISIS EXPLORATORIO DE LA BASE DE DATOS
+
+Cálculo de la media de botellas recolectadas en todos los países
+```{r}
+mean(BD_Botellas$bottle_count)
+```
+
+```{r}
+    hist(BD_Botellas$bottle_count,main = "Histograma de botellas PET recicladas")
+```
+
+
+##Lista de medias recolectas por pais
+
+```{r}
+df<-BD_Botellas
+medias<-aggregate(df$bottle_count~df$scan_country,df,mean,na.rm=TRUE)
+kable(medias)
+```
+
+## Media de recolección por año
+```{r}
+df<-BD_Botellas
+medias<-aggregate(df$bottle_count~df$year,df,mean,na.rm=TRUE)
+kable(medias)
+```
+
+
+## media de recolección por marcas
+
+```{r}
+df<-BD_Botellas
+medias<-aggregate(df$bottle_count~df$brand_name,df,mean,na.rm=TRUE)
+kable(medias)
+```
+
+## Grafico de comportamiento
+
+```{r}
+df<-BD_Botellas
+medias<-aggregate(df$bottle_count~df$brand_name,df,sum,na.rm=TRUE)
+kable(medias)
+```
+
+```{r}
+df<-BD_Botellas
+total<-aggregate(df$bottle_count~df$scan_country,df,sum,na.rm=TRUE)
+kable(total)
+```
+
+```{r}
+df<-BD_Botellas
+total_pais<-aggregate(df$bottle_count~df$Codecountry,df,sum,na.rm=TRUE)
+kable(total)
+plot(df$Codecountry,df$bottle_count)
+```
+
+```{r}
+barplot(prop.table(table(df$Codecountry)))
+```
+
+
+
+
+
+
+
+
+
+

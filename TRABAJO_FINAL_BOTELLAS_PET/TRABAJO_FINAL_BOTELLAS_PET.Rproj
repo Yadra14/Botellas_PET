@@ -1,0 +1,17 @@
+---
+title: "Entrenamiento_de_Arboles"
+author: "Alejandra Quispe"
+date: "2023-07-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(car)
+library(readxl)
+dfa<-read_excel("D:\\DIPLOMADO Logística Integral\\NUEVOS TOPICOS DE LOGISTICA II\\TRABAJO_FINAL_BOTELLAS_PET\\DATABASE_wastebase_scan_sum.xlsx")
+```
+

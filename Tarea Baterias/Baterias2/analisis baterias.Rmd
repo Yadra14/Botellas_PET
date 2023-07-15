@@ -1,0 +1,92 @@
+---
+title: "Duracion de baterias_m2"
+author: "Bautista Mireya, Flores Yadranka, Pinto Silvana, Quispe Alejandra"
+date: "2023-06-17"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Caso de estudio - Baterías de autoelevador
+
+Recuperación de datos.
+
+```{r}
+datos_1005 <- c(1,	19,	0,
+2,	18,	0,
+3,	22,	0,
+4,	25,	0,
+5,	17,	0,
+6,	30,	0,
+7,	29,	0,
+8,	32,	0,
+9,	31,	0,
+10,	33,	0,
+11,	38,	1,
+12,	36,	0,
+13,	40,	1,
+14,	40,	0,
+15,	42,	1,
+16,	45,	0,
+17,	47,	1,
+18,	49,	0,
+19,	55,	0,
+20,	58,	1,
+21,	57,	1,
+22,	63,	1,
+23,	65,	1,
+24,	65,	1,
+25,	66,	1,
+26,	69,	1,
+27,	70,	1,
+28,	71,	1,
+29,	75,	1,
+30,	86,	1,
+31,	79,	1,
+32,	88,	1,
+33,	89,	0,
+34,	92,	1,
+35,	84,	1)
+Muestra_1005 <- matrix(datos_1005, ncol =3, byrow = TRUE)
+Muestra_1005
+```
+¿Qué muestra es la que presentó mayor duración (vida útil)?
+
+```{r}
+which.max(Muestra_1005[1:35 ,2])
+
+```
+¿Cuál es la edad en semanas promedio?¿Cuál es su varianza)
+
+```{r}
+vida_prom <- mean(Muestra_1005[ ,2])
+vida_prom
+var_muestra1005 <- var(Muestra_1005[ ,2])
+var_muestra1005
+```
+
+Ploteo de la vida en semanas
+
+```{r}
+plot((Muestra_1005[ ,2]), main = "Vida en semanas - Siemens 1005", xlab = "Ficha Taller", ylab = "Semanas",type = "b", col = "GREEN")
+```
+Distribución de edades de la muestra
+```{r}
+hist(Muestra_1005[ ,2],
+     breaks = 3, 
+     col="peachpuff",
+     border="black",
+     prob = TRUE, 
+     xlab = "Edad", 
+     main = "Distribución de edades")
+lines(density(Muestra_1005[ ,2]),
+    lwd = 2,
+    col="chocolate3"
+                                            )
+```
+
+
